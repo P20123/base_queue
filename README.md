@@ -6,7 +6,6 @@ This says everything you'll need to know:
 ```
 ------------------------------------------------------------------------------
                            GCC Code Coverage Report
-Directory: /home/andy/workspace/k64_firmware/subprojects/base_queue
 ------------------------------------------------------------------------------
 File                                       Lines    Exec  Cover   Missing
 ------------------------------------------------------------------------------
