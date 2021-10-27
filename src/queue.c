@@ -34,11 +34,9 @@ void queue_push(queue_t *self, char val) {
     if(self->size < self->cap) {
         *self->wr = val;
         self->size++;
+        self->wr++;
         if(self->wr == self->buffer + self->cap) {
             self->wr = self->buffer;
-        }
-        else {
-            self->wr++;
         }
         self->op_ok = true;
     }
