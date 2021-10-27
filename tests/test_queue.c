@@ -1,4 +1,5 @@
 #include <queue/queue.h>
+#include <stdlib.h>
 #include <string.h>
 #include <setjmp.h>
 #include <stdarg.h>
@@ -6,16 +7,19 @@
 #include <cmocka.h>
 
 queue_t queue;
-char buf[5];
+char *buf = NULL;
 
 int init(void **state) {
     *state = &queue;
+    buf = malloc(5*sizeof(char));
+    assert_non_null(buf);
     memset(buf, 0, 5);
     queue_init(&queue, buf, 5);
     return 0;
 }
 
 int finish(void **state) {
+    free(buf);
     return 0;
 }
 
