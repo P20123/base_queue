@@ -10,6 +10,12 @@ typedef struct {
     bool op_ok;
 } queue_t;
 
+
+#define QUEUE_EMPTY(q) ((q)->size == 0)
+#define QUEUE_FULL(q) ((q)->size == (q)->cap)
+#define QUEUE_RESET(q) ((q)->size = 0, (q)->rd = (q)->buffer, (q)->wr = (q)->buffer, (q)->op_ok = true)
+#define QUEUE_AVAIL(q) ((q)->cap - (q)->size)
+
 /**
  * Initialize a queue.
  * @param self the queue
